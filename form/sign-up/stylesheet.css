@@ -1,0 +1,181 @@
+/* -----------------------------------------------------------
+   GLOBAL PAGE STYLING
+   This controls the entire background and base layout of the page.
+----------------------------------------------------------- */
+body {
+    font-family: 'Space Grotesk', sans-serif;   /* Main font used across the page */
+    background-color: #c1dbe6;                  /* Light blue fallback background */
+    
+    /* Centers all content both vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;                              /* Makes the body fill the full screen height */
+    margin: 0;                                   /* Removes default browser spacing */
+
+    /* Background image settings */
+    background-image: url(bg.png);              /* Page background image */
+    background-size: cover;                     /* Ensures the image fills the screen */
+    background-position: center;                /* Keeps the image centered */
+    background-repeat: no-repeat;               /* Prevents tiling */
+}
+
+/* -----------------------------------------------------------
+   HEADINGS INSIDE CARDS
+   Ensures the title looks clean and uses the Orbitron font.
+----------------------------------------------------------- */
+.card h2 {
+    margin-top: 0;                               /* Removes extra space above the heading */
+    font-family: 'Orbitron', sans-serif;         /* Futuristic font for titles */
+}
+
+/* -----------------------------------------------------------
+   MAIN CONTAINER
+   Stacks all cards vertically with spacing between them.
+----------------------------------------------------------- */
+.container {
+    display: flex;
+    flex-direction: column;                      /* Places items top-to-bottom */
+    gap: 15px;                                   /* Space between each card */
+}
+
+/* -----------------------------------------------------------
+   CARD STYLING
+   These are the white boxes that hold the form and login link.
+----------------------------------------------------------- */
+.card {
+    background-color: #F8F9FA;                   /* Soft white background */
+    padding: 15px 30px;                          /* Inner spacing */
+    border-radius: 10px;                         /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);    /* Soft shadow for depth */
+    text-align: center;                          /* Centers text inside the card */
+}
+
+/* Extra padding for the main form card */
+.main-card {
+    padding: 15px 10px;
+}
+
+/* -----------------------------------------------------------
+   FORM FIELD STYLING
+   Controls spacing and alignment of labels and inputs.
+----------------------------------------------------------- */
+.field {
+    margin-bottom: 15px;                         /* Space between each field */
+    text-align: left;                            /* Aligns labels to the left */
+}
+
+/* Checkbox-specific adjustments */
+.field input[type="checkbox"] {
+    width: auto;                                 /* Prevents checkbox from stretching */
+    margin-top: 10px;                            /* Adds breathing room above checkbox */
+}
+
+/* General input styling (text, email, password) */
+input {
+    width: 92%;                                  /* Makes inputs nearly full width */
+    padding: 8px;                                /* Comfortable typing space */
+}
+
+/* -----------------------------------------------------------
+   SUBMIT BUTTON
+   Styled to match the pink theme with hover animation.
+----------------------------------------------------------- */
+.button input {
+    background-color: #FFC0CB;                   /* Pink button color */
+    color: black;                                /* Black text for contrast */
+    border: 1px solid black;                     /* Thin border for definition */
+    border-radius: 6px;                          /* Rounded button edges */
+    padding: 10px;                               /* Button height */
+    width: 100%;                                 /* Full width button */
+    cursor: pointer;                             /* Shows pointer on hover */
+    font-family: 'Orbitron', sans-serif;         /* Matches heading font */
+    font-weight: bold;                           /* Makes text stand out */
+    transition: background 0.3s;                 /* Smooth hover animation */
+}
+
+/* Button hover effect */
+.button input:hover {
+    background-color: #fc9b9b;                   /* Slightly darker pink on hover */
+}
+
+/* -----------------------------------------------------------
+   LOGIN TEXT BELOW FORM
+----------------------------------------------------------- */
+.login {
+    font-size: 14px;                             /* Slightly smaller text */
+}
+
+/* -----------------------------------------------------------
+   HOMEPAGE LINK BUTTON
+   Styled like a button but is actually a link.
+----------------------------------------------------------- */
+.home {
+    display: block;                              /* Makes the link behave like a block */
+    text-align: center;                          /* Centers the text */
+    width: 250px;                                /* Fixed width for consistency */
+    margin: 0 auto;                              /* Centers the block horizontally */
+    background: #ffffff;                         /* White background */
+    color: black;                                /* Black text */
+    padding: 10px;                               /* Inner spacing */
+    border-radius: 8px;                          /* Rounded edges */
+    text-decoration: none;                       /* Removes underline */
+    font-weight: bold;                           /* Makes text stand out */
+    border: 1px solid black;                     /* Thin border */
+    transition: background 0.3s, transform 0.2s; /* Smooth hover animations */
+}
+
+/* Hover effect for homepage link */
+.home:hover {
+    background: #ffc0cb;                         /* Pink background on hover */
+    transform: translateY(-2px);                 /* Slight upward movement */
+}
+
+/* -------------------------------------
+   Media Queries / Accessibility
+   (Adjusts layout for small screens)
+------------------------------------- */
+@media (max-width: 480px) {
+
+    body {
+        height: auto;               /* Fixes mobile browsers forcing full-height layouts */
+        padding: 20px 10px;         /* Adds comfortable spacing on small screens */
+        align-items: flex-start;    /* Stops content from being squeezed vertically */
+    }
+
+    .container {
+        width: 100%;                /* Ensures container fills the screen */
+        max-width: 100%;            /* Prevents shrinking on narrow devices */
+        gap: 12px;                  /* Slightly tighter spacing for mobile */
+    }
+
+    .card {
+        width: 100%;                /* Cards stretch full width for readability */
+        padding: 12px 15px;         /* Reduces padding so content fits better */
+        border-radius: 8px;         /* Softer corners for compact layouts */
+    }
+
+    .main-card {
+        padding: 12px;              /* Smaller padding for mobile screens */
+    }
+
+    input {
+        width: 100%;                /* Inputs span full width for clean alignment */
+        box-sizing: border-box;     /* Keeps padding from breaking layout */
+        font-size: 16px;            /* Prevents iOS from zooming when typing */
+    }
+
+    .button input {
+        padding: 12px;              /* Larger tap area for touch screens */
+        font-size: 16px;            /* Matches mobile accessibility standards */
+    }
+
+    .home {
+        width: 100%;                /* Removes fixed width so it fits small screens */
+    }
+
+    .login {
+        font-size: 13px;            /* Slightly smaller text for tight layouts */
+    }
+}

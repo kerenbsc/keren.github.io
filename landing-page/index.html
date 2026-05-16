@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Specifies character encoding to help browsers display special characters -->
+    <meta charset="UTF-8">
+
+    <!-- Ensures proper scaling on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <!-- Google Fonts used throughout the site -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <title>Big Planetarium</title>
+</head>
+
+<body>
+
+    <!-- ============================
+         NAVIGATION BAR
+         Logo + left links + right links
+    ============================= -->
+    <nav class="navbar" aria-label="Main navigation">
+
+        <!-- Logo container -->
+        <div class="logo">
+            <img src="Logo.png" alt="The Company Logo">
+        </div>
+
+        <div class="navlinks">
+
+            <!-- Left-side navigation links -->
+            <div class="nav-left" aria-label="Primary links">
+                <a href="#explore">Planets</a>
+                <a href="#more">Stars</a>
+                <a href="#more">Galaxies</a>
+                <a href="#more">Black Holes</a>
+            </div>
+
+            <!-- Right-side navigation links -->
+            <div class="nav-right" aria-label="Secondary links">
+                <a href="#footer">About</a>
+                <a href="#footer">Contact</a>
+
+                <!-- Sign Up button linking to form -->
+                <a href="../form/sign-up/index.html">
+                    <button class="sign">Sign Up</button>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Drop-down button that only shows on a phone screen -->
+        <button class="dropdown">
+            &dtrif;
+        </button>
+
+    </nav>
+
+    <main>
+
+        <!-- ============================
+             HERO SECTION
+             Video background + overlay text
+        ============================= -->
+        <div class="hero">
+
+            <!-- Background looping video -->
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="MilkyWay.mp4" type="video/mp4">
+            </video>
+
+            <!-- Text overlay on top of video -->
+            <div class="hero-content">
+                <h1>Explore the Universe</h1>
+                <p>Curiosity starts here. Dive into space.</p>
+                <p>Are you an adventurer too?</p>
+
+                <!-- Scrolls to Milky Way section -->
+                <a href="#milkyway">
+                    <button class="start">Get Started</button>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- ============================
+             QUOTE SECTION
+        ============================= -->
+        <div class="quote">
+            <p>
+                <q>
+                    <em>
+                        Space is for everybody. It&apos;s not just for a few people in science or math,
+                        or for a select group of astronauts.
+                    </em>
+                </q>
+            </p>
+            <p>&mdash; Christa McAuliffe</p>
+        </div>
+
+        <!-- ============================
+             INFOBLOCK: MILKY WAY
+             Text + image with hover reveal
+        ============================= -->
+        <section class="infoblock" id="milkyway">
+
+            <!-- Text description -->
+            <div class="info-text">
+                <h2>The MilkyWay</h2>
+
+                <p>
+                    The Sun and all the planets around it are part
+                    of what is known as the Milky Way Galaxy. It is
+                    our home galaxy and one of the billions of galaxies
+                    in the universe. The term “milky” is derived from
+                    the galaxy&apos;s appearance from Earth &hyphen; a band of
+                    light in the night sky formed from stars. However,
+                    you can&apos;t see that with your naked eye. The Milky
+                    Way appears as a band as its disk-shaped structure
+                    is viewed from within. A barred spiral with a
+                    diameter ranging from 100, 000 to 1800,000 light
+                    years, our galactic home is estimated to contain
+                    between 100 and 400 billion stars.
+                </p>
+
+                <!-- Hover instruction -->
+                <p class="note">Hover the image to find out more</p>
+            </div>
+
+            <!-- Image + hidden hover panel -->
+            <div class="info-image">
+
+                <!-- Main image -->
+                <img src="image1.png" alt="The MilkyWay." class="milkyway-img">
+
+                <!-- Hidden text revealed on hover -->
+                <div class="info-hidden">
+                    <p>
+                        They Milky Way has never actually been photographed.
+                        Any seemingly accurate images of it are actually illustrations
+                        or artistic representations like animations. As we are located
+                        inside the Milky Way it is impossible to photograph it as a whole.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ============================
+            QUOTE SECTION
+        ============================= -->
+        <div class="quote">
+            <p>
+                <q>
+                    <em>Curiosity is the essence of our existence.</em>
+                </q>
+            </p>
+            <p>&#45; Gene Cernan</p>
+        </div>
+
+        <!-- ============================
+            INFOBLOCK (REVERSED LAYOUT)
+            Text + image with hover reveal
+        ============================= -->
+        <section class="infoblock1 reverse">
+            
+            <!-- Text content describing the Milky Way -->
+            <div class="info-text">
+                <h2>What is it?</h2>
+                <p> The Milky Way is a barred spiral galaxy that spans about
+                    100,000 light-years in diameter and contains between
+                    100 billion and 400 billion stars. It was formed
+                    approximately 12.5 billion years ago and continues to
+                    grow, with about 7 new stars born each year. The galaxy
+                    is primarily composed of dark matter, which makes up
+                    about 90% of its mass, and it contains a supermassive
+                    black hole at its center. The Milky Way is part of a
+                    group of galaxies known as the Local Group, which
+                    includes about 40 galaxies. 
+                </p>
+
+                <!-- Hover instruction -->
+                <p class="note">Hover the image to find out more</p>
+            </div>
+
+            <!-- Image + hidden hover panel -->
+            <div class="info-image">
+
+                <!-- Main image -->
+                <img src="image2.jpg" alt="Another image of the MilkyWay." class="milkyway-img">
+
+                <!-- Hidden text revealed on hover -->
+                <div class="info-hidden">
+                    <p>
+                    The Milky Way's appearance from Earth is
+                    characterized by a hazy band of light, which is
+                    formed by stars that are too distant to be
+                    individually distinguished. These facts provide
+                    a glimpse into the structure and characteristics
+                    of our galaxy.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ============================
+            QUOTE SECTION
+        ============================= -->
+        <div class="quote">
+            <p>
+                <q>
+                    <em>Not only is the Universe stranger than we imagine, it is stranger than we can imagine.</em>
+                </q>
+            </p>
+            <p>&#45; Sir Arthur Eddingto</p>
+        </div>
+
+        <!-- ============================
+            EXPLORE PLANETS SECTION
+            Horizontal scroll gallery
+        ============================= -->
+        <section class="explore" id="explore">
+
+            <!-- Section headings -->
+            <h2>Explore the Solar System!</h2>
+            <h2>Where will your adventure begin?</h2>
+
+            <div class="gallery-wrap">
+
+                <!-- Left scroll button -->
+                <button class="scroll-btn left" onclick="scrollPlanets(-1)">&#10094;</button>
+
+                <!-- Scrollable planet gallery -->
+                <div class="planet-gallery" id="planetGallery" aria-label="Planet exploration gallery">
+        
+                    <!-- Mercury card -->
+                    <!-- Link to external page -->
+                    <a href="../planets/mercury/index.html" class="planet-card"
+                    aria-label="Mercury: the closest planet to the Sun. Click to learn more">
+                    
+                        <!-- Planet image -->
+                        <img src="mercury_card.jpg" alt="Mercury">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Mercury</p>
+                            <p class="planet-desc">Closest planet to the Sun with a heavily cratered surface and extreme temperatures.</p>
+                        </div>
+                    </a>
+
+                    <!-- Venus card -->
+                    <!-- Link to external page -->
+                    <a href="../planets/venus/index.html"
+                    class="planet-card" aria-label="Learn about Venus, a hot toxic planet with a thick atmosphere">
+                        
+                        <!-- Planet image -->
+                        <img src="venus_card.jpg" alt="Venus">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Venus</p>
+                            <p class="planet-desc">A hot, toxic world with a thick atmosphere and volcanic surface.</p>
+                        </div>
+                    </a>
+
+                    <!-- Earth card -->
+                    <!-- Link to external page -->
+                    <a href="../planets/earth/index.html" class="planet-card"
+                    aria-label="Earth. Our home planet with water, air, and life. Click to explore Earth.">
+                        
+                        <!-- Planet image -->
+                        <img src="earth_card.jpg" alt="Earth">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Earth</p>
+                            <p class="planet-desc">Our home planet with water, air, and life.</p>
+                        </div>
+                    </a>
+
+                    <!-- Mars card (non‑link version) -->
+                    <div class="planet-card"
+                    aria-label="Mars. A cold rocky desert planet known as the Red Planet with ice caps and dust storms.">
+
+                        <!-- Planet image -->
+                        <img src="mars_card.jpg" alt="Mars">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Mars</p>
+                            <p class="planet-desc">A cold, rocky planet known as the Red Planet with deserts and ice caps.</p>
+                        </div>
+                    </div>
+
+                    <!-- Jupiter card (non‑link version) -->
+                    <div class="planet-card"
+                    aria-label="Jupiter. The largest planet in the solar system, a gas giant with powerful storms and many moons.">
+
+                        <!-- Planet image -->
+                        <img src="jupiter_card.jpg" alt="Jupiter">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Jupiter</p>
+                            <p class="planet-desc">The largest planet, a gas giant with powerful storms and many moons.</p>
+                        </div>
+                    </div>
+
+                    <!-- Saturn card (non‑link version) -->
+                    <div class="planet-card"
+                    aria-label="Saturn. A gas giant famous for its iconic ring system.">
+
+                        <!-- Planet image -->
+                        <img src="saturn_card.jpg" alt="Saturn">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Saturn</p>
+                            <p class="planet-desc">A gas giant famous for its beautiful ring system</p>
+                        </div>
+                    </div>
+
+                    <!-- Uranus card (non‑link version) -->
+                    <div class="planet-card"
+                    aria-label="Uranus. An ice giant that rotates on its side with a blue green atmosphere.">
+
+                        <!-- Planet image -->
+                        <img src="uranus_card.jpg" alt="Uranus">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Uranus</p>
+                            <p class="planet-desc">An ice giant that rotates on its side with a blue-green atmosphere.</p>
+                        </div>
+                    </div>
+
+                    <!-- Neptune card (non‑link version) -->
+                    <div class="planet-card"
+                    aria-label="Neptune. A distant ice giant with strong winds and a deep blue color.">
+
+                        <!-- Planet image -->
+                        <img src="neptune_card.jpg" alt="Neptune">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Neptune</p>
+                            <p class="planet-desc">A distant ice giant with strong winds and a deep blue color.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right scroll button for planet gallery -->
+                <button class="scroll-btn right" onclick="scrollPlanets(1)">&#10095;</button>
+
+            </div>
+        </section>
+
+        <!-- ============================
+            OTHER TOPICS SECTION
+            Grid of 3 topic cards
+        ============================= -->
+        <section class="more" id="more">
+
+            <!-- Section intro text -->
+            <p class="more-sub">Keep Exploring Our Universe</p>
+            <h2>What would you like to learn about?</h2>
+
+            <!-- Grid container for topic cards -->
+            <div class="more-grid">
+
+                <!-- Stars card -->
+                <!-- Link to external page -->
+                <a href="../stars/stars.html" class="more-card">
+                    
+                    <!-- Stars card image -->
+                    <img src="stars.jpg" alt="Stars">
+
+                    <!-- Short summary about stars -->
+                    <div class="more-overlay">
+                        <p class="more-name">Stars</p>
+                        <p class="more-desc">These giant,
+                            glowing balls of hot gas,
+                            held together by gravity.
+                            Inside their cores, they
+                            produce energy by turning
+                            hydrogen into helium, which
+                            releases the light and heat
+                            we see from Earth.</p>
+                    </div>
+                </a>
+
+                <!-- Galaxies card -->
+                <!-- Link to external page -->
+                <a href="galaxies.html" class="more-card">
+
+                    <!-- Stars card image -->
+                    <img src="galaxy.jpg" alt="A galaxy">
+
+                    <!-- Short summary about galaxies -->
+                    <div class="more-overlay">
+                        <p class="more-name">Galaxies</p>
+                        <p class="more-desc">Galaxies are
+                            huge groups of stars, planets,
+                            gas, and dust held together by
+                            gravity. They range from
+                            small systems with a few
+                            thousand stars to massive
+                            ones containing trillions,
+                            stretching across vast
+                            distances. Most galaxies have
+                            a supermassive black hole at
+                            their center.</p>
+                    </div>
+                </a>
+
+                <!-- Blackholes card -->
+                <!-- Link to external page -->
+                <a href="blackholes.html" class="more-card">
+
+                    <!-- Blackholes card image -->
+                    <img src="blackhole.jpg" alt="A black hole">
+                    
+                    <!-- Short summary about blackholes -->
+                    <div class="more-overlay">
+                        <p class="more-name">Black Holes</p>
+                        <p class="more-desc">With such a
+                            strong gravity that nothing,
+                            not even light can escape through,
+                            the black holds its place as a void
+                            that can't be escaped once too
+                            close. At its center is a
+                            singularity, where matter is
+                            packed incredibly tightly.
+                            Black holes also bend space
+                            and time, affecting nearby
+                            stars and gas.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================
+        FLOATING MENU (Hamburger)
+    ============================= -->
+    <div class="floating-menu">
+
+        <!-- 3-line (hamburger) toggle button -->
+        <div class="menu-btn" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Expanded menu items -->
+        <div class="menu-items" aria-hidden="true">
+            <a href="#top">To the top</a>
+            <a href="#footer">To the bottom</a>
+        </div>
+    </div>
+    
+    <!-- ============================
+        FOOTER SECTION
+    ============================= -->
+    <footer class="footer" id="footer">
+
+        <!-- Logo only -->
+        <div class="footer-logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+
+        <!-- Footer grid layout -->
+        <div class="footer-links">
+
+            <!-- Intro column -->
+            <div class="footer-col footer-intro">
+                <div class="inner">
+
+                    <h3>Did you enjoy the exploration?</h3>
+
+                    <p>
+                        Space is endless. If you haven't checked out
+                        all the offered topics, go ahead and do it now!
+                    </p>
+
+                    <!-- Suggest-a-topic form -->
+                    <!-- When the 'submit' button is clicked, an alert with the text 'submitted' is displayed -->
+                    <form onsubmit="alert('Submitted!')">
+                        <div class="field">
+
+                        <!-- The label/question/statement for the textbox -->
+                        <label for="add">
+
+                            Are there any topics you'd like to have added?
+                        </label>
+
+                        <!-- Input with placeholder -->
+                        <input 
+                            type="text" 
+                            id="add"
+                            name="topic"
+                            placeholder="Suggest a topic..." 
+                            required
+                        >
+                        </div>
+
+                        <!-- The submit button -->
+                        <div class="button">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right-side footer columns -->
+            <div class="footer-right">
+
+                <!-- Explore links -->
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="#milkyway">The Milkyway</a>
+                    <a href="#explore">Planets</a>
+                    <a href="stars.html">Stars</a>
+                    <a href="galaxies.html">Galaxies</a>
+                    <a href="blackholes.html">Black Holes</a>
+                </div>
+
+                <!-- Social links -->
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">X</a>
+                    <a href="#">Youtube</a>
+                </div>
+
+                <!-- About text -->
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <p>
+                        Big Planetarium is a Bristol-based
+                        organisation dedicated to sharing
+                        the wonders of space through
+                        engaging educational experiences
+                        for the public and schools. We
+                        aim to make science accessible,
+                        inspiring curiosity and ensuring
+                        everyone feels welcome to explore
+                        the universe.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Bottom footer bar -->
+        <div class="footer-bottom">
+            <p>© 2026 Space Explorer</p>
+        </div>
+            
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

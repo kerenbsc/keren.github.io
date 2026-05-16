@@ -1,0 +1,218 @@
+/* ---------------------------------------------------------
+   GENERAL PAGE STYLING
+   Sets the background, font, and centers everything on screen
+--------------------------------------------------------- */
+body {
+    font-family: 'Space Grotesk', sans-serif; /* Main text font */
+    background-color: #c1dbe6;                /* Light blue fallback color */
+    display: flex;                            /* Enables centering */
+    justify-content: center;                  /* Centers content horizontally */
+    align-items: center;                      /* Centers content vertically */
+    height: 100vh;                            /* Full screen height */
+    margin: 0;                                /* Removes default spacing */
+    
+    /* Background image settings */
+    background-image: url(bg.png);
+    background-size: cover;                   /* Makes image fill the screen */
+    background-position: center;              /* Centers the image */
+    background-repeat: no-repeat;             /* Prevents tiling */
+}
+
+/* ---------------------------------------------------------
+   HEADINGS INSIDE CARDS
+   Uses a futuristic font for the login title
+--------------------------------------------------------- */
+.card h2 {
+    margin-top: 0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* ---------------------------------------------------------
+   MAIN PAGE LAYOUT
+   Stacks the cards vertically with spacing
+--------------------------------------------------------- */
+.container {
+    display: flex;
+    flex-direction: column; /* Vertical stacking */
+    gap: 15px;              /* Space between cards */
+}
+
+/* ---------------------------------------------------------
+   CARD STYLING
+   White boxes with rounded corners and shadows
+--------------------------------------------------------- */
+.card {
+    background-color: #F8F9FA;
+    padding: 15px 30px;
+    border-radius: 10px;                        /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);   /* Soft shadow */
+    text-align: center;
+}
+
+.main-card {
+    padding: 15px 10px;
+}
+
+/* ---------------------------------------------------------
+   FORM FIELDS
+   Controls spacing and alignment of input areas
+--------------------------------------------------------- */
+.field {
+    margin-bottom: 15px;
+    text-align: left; /* Labels align left */
+}
+
+.field input[type="checkbox"] {
+    width: auto;
+    margin-top: 10px;
+}
+
+/* General input styling */
+input {
+    width: 92%;      /* Slightly smaller than full width */
+    padding: 8px;
+}
+
+/* ---------------------------------------------------------
+   BUTTON STYLING
+   Pink button with hover animation
+--------------------------------------------------------- */
+.button input {
+    background-color: #FFC0CB;  /* Light pink */
+    color: black;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    transition: background 0.3s; /* Smooth hover effect */
+}
+
+.button input:hover {
+    background-color: #fc9b9b; /* Darker pink on hover */
+}
+
+/* ---------------------------------------------------------
+   SIGN-UP TEXT
+--------------------------------------------------------- */
+.login {
+    font-size: 14px;
+}
+
+/* ---------------------------------------------------------
+   "FORGOT PASSWORD" LINK
+   Small clickable text with hover effect
+--------------------------------------------------------- */
+.forgot {
+    font-size: 12px;
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.forgot:hover {
+    color: #ff7f7f;
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------------------
+   PASSWORD RESET BOX
+   Hidden until user clicks "Forgot Password?"
+--------------------------------------------------------- */
+.reset {
+    display: none; /* Hidden by default */
+}
+
+.reset input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* When JavaScript adds the "show" class, the box becomes visible */
+.reset.show {
+    display: block;
+}
+
+/* ---------------------------------------------------------
+   HOMEPAGE BUTTON
+   Styled link that looks like a button
+--------------------------------------------------------- */
+.home {
+    display: block;
+    text-align: center;
+    width: 250px;
+    margin: 0 auto;
+    background: #ffffff;
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid black;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.home:hover {
+    background: #ffc0cb;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* ------------------------------
+   Media Queries / Accessibility
+   (Adjusts layout for small screens)
+------------------------------ */
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;              /* Adds breathing room on small screens */
+        align-items: flex-start;    /* Prevents content from being squeezed vertically */
+        height: auto;               /* Fixes mobile browsers forcing full-height layouts */
+    }
+
+    .container {
+        width: 100%;                /* Makes container fill the screen */
+        max-width: 100%;            /* Ensures no accidental shrinking */
+        gap: 12px;                  /* Slightly tighter spacing for small screens */
+    }
+
+    .card {
+        width: 100%;                /* Cards stretch to full width for readability */
+        padding: 12px 15px;         /* Smaller padding to fit mobile screens */
+        border-radius: 8px;         /* Softer corners for compact layout */
+    }
+
+    .main-card {
+        padding: 12px;              /* Reduces padding so content fits comfortably */
+    }
+
+    input {
+        width: 100%;                /* Inputs stretch across the screen */
+        box-sizing: border-box;     /* Prevents padding from breaking layout */
+        font-size: 16px;            /* Stops iOS from zooming in on tap */
+    }
+
+    .button input {
+        padding: 12px;              /* Larger tap area for mobile users */
+        font-size: 16px;            /* Matches mobile accessibility standards */
+    }
+
+    .home {
+        width: 100%;                /* Ensures home section fits small screens */
+        max-width: 100%;            /* Prevents unwanted shrinking */
+    }
+
+    .forgot {
+        font-size: 13px;            /* Slightly smaller text for tight layouts */
+    }
+
+    .login {
+        font-size: 13px;            /* Matches the forgot-password text size */
+    }
+}

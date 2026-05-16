@@ -1,0 +1,1204 @@
+/* ===============================
+   GLOBAL RESET
+   Removes default spacing and
+   ensures consistent sizing
+================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+
+/* ===============================
+   NAVIGATION BAR
+================================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo styling */
+.logo img {
+  height: 40px;
+  margin: 4px 0;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+}
+
+/* Left + right nav groups */
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-left {
+  margin-left: 20px;
+}
+
+.nav-right {
+  margin-left: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+  transform: translateY(-5px);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+
+/* ===============================
+   SIGN UP BUTTON
+================================= */
+.sign {
+  padding: 7px 14px;
+  cursor: pointer;
+
+  color: white;
+  background: transparent;
+  border: 1.5px solid white;
+  border-radius: 7px;
+
+  transition: 0.5s;
+}
+
+.sign:hover {
+  background: white;
+  color: black;
+}
+
+/* ===============================
+  DROP DOWN BUTTON
+================================= */
+.dropdown {
+  display: none;
+  background: none;
+  color: white;
+  font-size: 47px;
+  border: none;
+}
+
+/* ===============================
+  HERO SECTION
+  Fullscreen video background
+================================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background video */
+.hero-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  z-index: -1;
+}
+
+/* Dark gradient overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+
+  z-index: 1;
+}
+
+/* Text block positioned over video */
+.hero-content {
+  position: relative;
+  left: 80px;
+  top: 50%;
+  max-width: 500px;
+
+  color: white;
+  z-index: 2;
+
+  /* Initial fade + slide animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* Fade-in animation for hero text */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+
+/* Hero heading */
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Hero paragraph text */
+.hero p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* "Get Started" button */
+.start {
+  margin-top: 20px;
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: white;
+  color: black;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.start:hover {
+  transform: translateY(-3px);
+  background: #ddd;
+}
+
+
+/* ===============================
+   INTRO SECTION
+================================= */
+.intro {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: url("star-bg.jpg") center/cover no-repeat;
+}
+
+
+/* ===============================
+   QUOTE SECTIONS
+================================= */
+.quote {
+  padding: 50px 20px;
+  text-align: center;
+
+  color: #f5f5f5;
+  background: linear-gradient(180deg, #191618, #0b1220);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.quote q {
+  font-size: 20px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.quote p:last-child {
+  margin-top: 10px;
+  opacity: 0.5;
+}
+
+
+/* ===============================
+   INFO BLOCKS
+   Two-column layout with text + image
+================================= */
+.infoblock,
+.infoblock1 {
+  display: flex;
+  min-height: 90vh;
+  padding: 50px;
+}
+
+/* Reverse layout version */
+.infoblock.reverse,
+.infoblock1.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Left text panel */
+.info-text {
+  flex: 1;
+  padding: 80px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: white;
+  background: linear-gradient(145deg, #0a0a0a, #0b1220);
+
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Adjusts borders when layout flips */
+.infoblock.reverse .info-text,
+.infoblock1.reverse .info-text {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: none;
+}
+
+/* Right‑aligned text for infoblock1 */
+.infoblock1 {
+  text-align: right;
+}
+
+
+/* ===============================
+   INFO TEXT STYLING
+================================= */
+.info-text h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 42px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.info-text p {
+  font-family: "Space Grotesk", sans-serif;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* Decorative line above text */
+.info-text::before {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: white;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+/* Small note text */
+.note {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+
+/* ===============================
+   IMAGE PANEL
+================================= */
+.info-image {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Main image */
+.info-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Slight zoom on hover */
+.info-image:hover img {
+  transform: scale(1.05);
+}
+
+/* ===============================
+  HOVER OVERLAY
+  Hidden text revealed on hover
+================================= */
+.info-hidden {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 90px;
+  text-align: center;
+
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Reveal overlay on hover */
+.info-image:hover .info-hidden {
+  opacity: 1;
+}
+
+/* Overlay text font */
+.info-hidden p {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* ===============================
+  EXPLORE SECTION
+  Background + section spacing
+================================= */
+.explore {
+  margin: 50px 40px;
+  padding: 70px 40px 30px;
+
+  text-align: center;
+  color: #f2f2f2;
+
+  background: url("star-bg.jpg") center/cover fixed;
+}
+
+.explore h2 {
+  font-family: Orbitron;
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+/* Extra spacing before gallery */
+.explore h2:last-of-type {
+  margin-bottom: 60px;
+}
+
+
+/* ===============================
+  GALLERY WRAPPER
+  Holds scroll buttons + gallery
+================================= */
+.gallery-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+
+/* ===============================
+  PLANET GALLERY (HORIZONTAL SCROLL)
+================================= */
+.planet-gallery {
+  display: flex;
+  gap: 25px;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  padding: 20px 40px 60px;
+}
+
+/* Hide scrollbar (WebKit browsers) */
+.planet-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ===============================
+  PLANET CARDS
+================================= */
+.planet-card {
+  flex: 0 0 30%;
+  height: 280px;
+
+  position: relative;
+  overflow: hidden;
+
+  scroll-snap-align: center;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Card image */
+.planet-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+/* Hover effect: lift + tilt */
+.planet-card:hover {
+  transform: translateY(-8px) scale(1.05) rotateY(8deg);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.planet-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Disable hover effects for non-link cards */
+.planet-card:not(a):hover {
+  transform: none;
+  box-shadow: none;
+  cursor: default;
+}
+
+.planet-card:not(a):hover img {
+  transform: none;
+}
+
+
+/* ===============================
+  CARD OVERLAY INFO
+================================= */
+.planet-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 35%;
+  padding: 12px 14px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+
+  pointer-events: none;
+}
+
+/* Reveal overlay on hover */
+.planet-card:hover .planet-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Overlay title */
+.planet-name {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+/* Overlay description */
+.planet-desc {
+  font-family: "Space Grotesk", sans-serif;
+  margin-top: 5px;
+
+  font-size: 14px;
+  line-height: 1.2;
+  opacity: 0.9;
+
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+}
+
+
+/* ===============================
+  SCROLL BUTTONS
+================================= */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 45px;
+  height: 70px;
+
+  border: none;
+  cursor: pointer;
+
+  font-size: 28px;
+  color: white;
+
+  background: rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+
+  z-index: 10;
+}
+
+.scroll-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+/* Button positions */
+.scroll-btn.left { left: 0; }
+.scroll-btn.right { right: 0; }
+
+/* ===============================
+  MORE SECTION
+  Background + spacing
+================================= */
+.more {
+  padding: 50px 40px;
+  background: #0b1220;
+  color: white;
+}
+
+/* Small subtitle above heading */
+.more-sub {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+/* Main heading */
+.more h2 {
+  font-size: 36px;
+  margin-bottom: 50px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+
+/* ===============================
+  GRID LAYOUT FOR TOPIC CARDS
+================================= */
+.more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+
+/* ===============================
+  TOPIC CARDS
+================================= */
+.more-card {
+  position: relative;
+  display: block;
+
+  height: 260px;
+  overflow: hidden;
+
+  text-decoration: none;
+  border-radius: 12px;
+}
+
+/* Card image */
+.more-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+
+/* ===============================
+  CARD OVERLAY (GRADIENT)
+================================= */
+.more-overlay {
+  position: absolute;
+  inset: 0;
+
+  padding: 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.3),
+    transparent
+  );
+
+  transition: background 0.4s ease;
+}
+
+
+/* ===============================
+  CARD TITLE (BOTTOM LEFT)
+================================= */
+.more-name {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  z-index: 2;
+
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Space Grotesk", sans-serif;
+
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+
+/* ===============================
+  CARD DESCRIPTION (CENTER)
+  Hidden until hover
+================================= */
+.more-desc {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 85%;
+  padding: 12px 16px;
+
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  color: white;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  /* Glass effect */
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  border-radius: 10px;
+
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Reveal description on hover */
+.more-card:hover .more-desc {
+  opacity: 1;
+  transform: translate(-50%, -55%);
+}
+
+
+/* ===============================
+  HOVER EFFECTS
+================================= */
+.more-card {
+  overflow: hidden;
+}
+
+/* Zoom image on hover */
+.more-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Darken overlay on hover */
+.more-card:hover .more-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.15)
+  );
+}
+
+/* ===============================
+  FOOTER — MAIN CONTAINER
+================================= */
+.footer {
+  background: #05070d;
+  color: #ccc;
+
+  padding: 40px 40px 30px;
+  margin-top: 80px;
+}
+
+/* Logo section */
+.footer-logo {
+  margin-bottom: 30px;
+}
+
+.footer-logo img {
+  height: 40px;
+  width: auto;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+}
+
+
+/* ===============================
+  FOOTER GRID LAYOUT
+================================= */
+.footer-links {
+  display: grid;
+  grid-template-columns: 2.2fr 3fr;
+  gap: 20px;
+}
+
+/* Right side: 3-column layout */
+.footer-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  padding-left: 50px;
+}
+
+/* Left intro column */
+.footer-intro {
+  padding-right: 40px;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Inner wrapper for spacing */
+.inner {
+  padding-right: 40px; /* spacing without shifting divider */
+}
+
+
+/* ===============================
+  FOOTER COLUMN STYLES
+================================= */
+.footer-col {
+  padding: 0;
+}
+
+/* Column headings */
+.footer-col h4 {
+  color: white;
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Intro column heading */
+.footer-col h3 {
+  color: white;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* Intro column text + labels */
+.footer-col.footer-intro p,
+.footer-col.footer-intro label {
+  margin-bottom: 10px;
+}
+
+/* General paragraph styling */
+.footer-col p {
+  font-size: 13px;
+  line-height: 17px;
+}
+
+/* Footer links */
+.footer-col a {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #aaa;
+  font-size: 14px;
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+  color: white;
+}
+
+
+/* ===============================
+  FORM FIELDS
+================================= */
+.field {
+  margin-bottom: 15px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px;
+
+  border: none;
+  outline: none;
+  border-radius: 6px;
+
+  background: #0b1220;
+  color: white;
+}
+
+/* Submit button */
+.button input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 40px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: white;
+  color: black;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.button input:hover {
+  background: #ddd;
+}
+
+
+/* ===============================
+  FOOTER BOTTOM BAR
+================================= */
+.footer-bottom {
+  padding-top: 20px;
+
+  font-size: 13px;
+  opacity: 0.6;
+  text-align: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ===============================
+  FLOATING MENU — MAIN CONTAINER
+  Fixed position on the page
+================================= */
+.floating-menu {
+  position: fixed;
+  top: 80px;
+  right: 15px;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+
+/* ===============================
+  HAMBURGER BUTTON
+================================= */
+.menu-btn {
+  width: 45px;
+  height: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  padding: 8px;
+  cursor: pointer;
+
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid white;
+  border-radius: 8px;
+
+  transition: 0.3s ease;
+}
+
+
+/* ===============================
+  HAMBURGER LINES (FLOATING)
+================================= */
+.menu-btn span {
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+
+  /* Floating animation */
+  animation: floatLine 3s ease-in-out infinite;
+}
+
+/* Staggered animation for nicer effect */
+.menu-btn span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.menu-btn span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+
+/* ===============================
+  MENU ITEMS (INITIALLY HIDDEN)
+================================= */
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-top: 10px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+
+  transition: 0.3s ease;
+}
+
+
+/* ===============================
+  MENU LINKS
+================================= */
+.menu-items a {
+  padding: 10px 14px;
+
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+
+  text-decoration: none;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px;
+
+  border-radius: 6px;
+
+  /* Soft shadow for floating effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+.menu-items a:hover {
+  background: white;
+  color: black;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.6),
+    0 0 12px rgba(120, 160, 255, 0.3);
+}
+
+
+/* ===============================
+  EXPAND MENU ON HOVER
+================================= */
+.floating-menu:hover .menu-items {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+/* ===============================
+  BUTTON HOVER EFFECT
+================================= */
+.menu-btn:hover {
+  background: white;
+}
+
+.menu-btn:hover span {
+  background: black;
+}
+
+
+/* ===============================
+  FLOATING ANIMATION (LINES ONLY)
+================================= */
+@keyframes floatLine {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* ==============================
+   Media Queries / Accessibility
+   (Adjusts layout for smaller screens)
+============================== */
+@media (max-width: 857px) {
+
+  .dropdown {
+    display: block;                 /* Shows the mobile dropdown button */
+    transition: all 0.25s ease;     /* Smooth animation when interacting */
+  }
+
+  button.dropdown:hover {
+    transform: translateY(-4px);    /* Slight lift effect on hover */
+  }
+
+  .navlinks {
+    position: absolute;             /* Allows menu to slide over the page */
+    top: 60px;                      /* Places menu below the navbar */
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    flex-direction: column;         /* Stacks links vertically */
+
+    padding: 30px;
+    background: black;              /* Solid background for readability */
+    backdrop-filter: blur(8px);     /* Adds a soft blur behind the menu */
+
+    max-height: 0;                  /* Hidden by default */
+    overflow: hidden;               /* Prevents content from spilling out */
+
+    opacity: 0;                     /* Invisible until activated */
+    transform: translateY(-10px);   /* Slight upward offset for animation */
+    transition: 0.3s ease;          /* Smooth open/close animation */
+  }
+
+  .navlinks.active {
+    max-height: 400px;              /* Expands menu when opened */
+    opacity: 1;                     /* Makes it visible */
+    transform: translateY(0);       /* Slides into place */
+  }
+
+  .navlinks {
+    align-items: center;            /* Centers links for mobile layout */
+  }
+
+  .nav-left,
+  .nav-right {
+    flex-direction: column;         /* Stacks left/right nav items */
+    width: 100%;                    /* Full width for easier tapping */
+    justify-content: center;
+  }
+
+  .nav-right {
+    margin-top: 15px;               /* Adds spacing between sections */
+  }
+
+  .nav-right a {
+    padding-left: 13px;             /* Slight indent for cleaner look */
+  }
+
+  .floating-menu {
+    top: 90px;                      /* Adjusts floating menu position */
+  }
+}
+
+/* ==============================
+   Smaller Screens (600px and below)
+============================== */
+@media (max-width: 600px) {
+
+  .infoblock,
+  .infoblock1 {
+    flex-direction: column;         /* Stacks text + image vertically */
+    padding: 20px;                  /* Comfortable spacing for mobile */
+    transition: all 0.3s ease;
+  }
+
+  /* Reverse layouts also stack normally on mobile */
+  .infoblock.reverse,
+  .infoblock1.reverse {
+    flex-direction: column;
+  }
+
+  /* Text and images take full width */
+  .info-text,
+  .info-image {
+    width: 100%;
+  }
+
+  .info-text {
+    padding: 30px 30px;             /* Balanced spacing for readability */
+    text-align: left;
+  }
+
+  .info-hidden {
+    padding: 20px;                  /* Consistent spacing for hidden blocks */
+  }
+
+  .planet-gallery {
+    padding: 20px 10px 60px;        /* Reduces side padding for small screens */
+    gap: 0;                         /* Prevents next card from peeking in */
+  }
+
+  .planet-card {
+    flex: 0 0 100%;                 /* Shows one card at a time */
+    height: 300px;                  /* Fixed height for consistency */
+  }
+
+  /* FOOTER LAYOUT FOR MOBILE */
+  .footer-links {
+    grid-template-columns: 1fr;     /* Stacks all footer sections */
+    gap: 30px;
+  }
+
+  .footer-intro {
+    border-right: none;             /* Removes desktop divider */
+    padding-right: 0;
+  }
+
+  .footer-right {
+    grid-template-columns: 1fr;     /* Stacks right-side footer items */
+    padding-left: 0;
+    gap: 20px;
+  }
+
+  .footer-col {
+    text-align: center;             /* Centers text for easier reading */
+  }
+
+  .inner {
+    padding-right: 0;               /* Removes extra spacing */
+  }
+
+  /* FORM INPUT FIXES */
+  .field input {
+    width: 90%;                     /* Keeps inputs centered and readable */
+    margin: 0 auto;
+  }
+
+  .button input {
+    width: 90%;
+    margin: 10px auto 30px;         /* Adds spacing below button */
+  }
+
+  /* LOGO CENTERING */
+  .footer-logo {
+    display: flex;
+    justify-content: center;        /* Centers logo on mobile */
+  }
+
+  .footer-col:last-child {
+    margin-bottom: 20px;            /* Adds breathing room at the bottom */
+  }
+}

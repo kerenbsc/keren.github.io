@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Specifies character encoding to help browsers display special characters -->
+    <meta charset="UTF-8">
+    <!-- Ensures the page scales correctly on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Links to external CSS file for styling -->
+    <link rel="stylesheet" href="stylesheet.css">
+    
+    <!-- Imports custom fonts from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Page title shown in browser tab -->
+    <title>Big Planetarium | Sign Up</title>
+</head>
+
+<body>
+    <!-- Main container that holds all page content -->
+    <div class="container">
+
+        <!-- Card section for login form -->
+        <div class="card">
+            <div class="main-card">
+                <!-- Login form -->
+                <form class="form">
+                    <!-- Page heading -->
+                    <h2>Login to Big Planetarium</h2>
+
+                    <!-- Email input field -->
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input 
+                            type="text" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email" 
+                            required
+                            aria-label="Email">
+                    </div>
+
+                    <!-- Password input field -->
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Enter your password" 
+                            required
+                            aria-label="Password">
+                    </div>
+
+                    <!-- Clickable text to show password reset option -->
+                    <p class="forgot" onclick="toggleReset()">Forgot Password?</p>
+
+                    <!-- Hidden password reset field (appears when triggered) -->
+                    <div class="reset" id="reset">
+                        <input 
+                            type="email" 
+                            placeholder="Enter your email"
+                            aria-label="Reset email">
+                    </div>
+
+                    <!-- Login button -->
+                    <div class="button">
+                        <input 
+                            type="submit" 
+                            value="Login" 
+                            id="mainbtn"
+                            aria-label="Login button">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Secondary card with sign-up link -->
+        <div class="card">
+            <div class="login">
+                Don't have an account? 
+                <a href="../sign-up/index.html" aria-label="Sign up page">Sign-up</a>
+            </div>
+        </div>
+
+        <!-- Link to return to homepage -->
+        <a href="../../landing-page/index.html" class="home" aria-label="Return to homepage">
+            Return to Homepage
+        </a>
+    </div>
+
+    <!-- External JavaScript file for interactive behavior -->
+    <script src="script.js"></script>
+</body>
+</html>

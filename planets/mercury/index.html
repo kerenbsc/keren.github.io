@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Specifies character encoding to help browsers display special characters -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <title>Big Planetarium | Mercury</title>
+</head>
+
+<body>
+
+    <!-- ============================
+        NAVIGATION BAR
+    ============================= -->
+    <nav class="navbar" aria-label="Main navigation">
+
+        <!-- Logo -->
+        <div class="logo">
+            <img src="../../landing-page/Logo.png" alt="The Company Logo">
+        </div>
+
+        <!-- Left nav links -->
+        <div class="nav-left" aria-label="Primary links">
+            <a href="#explore">Planets</a>
+            <a href="#stats">Statistics</a>
+            <a href="#info">Overview</a>
+            <a href="#info">Facts</a>
+            <a href="#video">Video</a>
+        </div>
+
+        <!-- Right nav links -->
+        <div class="nav-right" aria-label="Secondary links">
+            <a href="#footer">About</a>
+            <a href="#footer">Contact</a>
+        </div>
+    </nav>
+
+    <!-- ============================
+        HEADER SECTION
+    ============================= -->
+    <header>
+        <h1>MERCURY</h1>
+
+        <!-- Header Image -->
+        <div class="header-image">
+            <img src="mercury.png" alt="The planet Mercury.">
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- ============================
+            STATISTICS SECTION
+        ============================= -->
+        <section class="intro-stats" id="stats">
+            <h1>Statistics</h1>
+            <ul>
+                <li><strong>Distance from Sun:</strong> Approximately 0.387 AU &lpar;57.91 million km&rpar;</li>
+                <li><strong>Diameter&colon;</strong> 4881.06 km &lpar; 3032.95 miles &rpar;</li>
+                <li><strong>Length of Day &lpar;one complete rotation on its axis&rpar;&colon;</strong> 176 Earth days</li>
+                <li><strong>Length of Year &lpar;one complete orbit around the Sun&rpar;&colon;</strong> 88 Earth days</li>
+                <li><strong>Temperature during daytime&colon;</strong> 800°F &lpar;430°C&rpar;</li>
+                <li><strong>Temperature during nighttime&colon;</strong> -290°F &lpar;-180°C&rpar;</li>
+                <li><strong>Atmosphere&colon;</strong> Composed of helium, hydrogen, oxygen, sodium, calcium, potassium, and water vapor</li>
+                <li><strong>Moons&colon;</strong> 0</li>
+            </ul>
+        </section>
+
+        <!-- ============================
+            OVERVIEW + FACTS SECTION
+        ============================= -->
+        <section class="info" id="info">
+
+            <!-- (colored background) -->
+            <div class="color">
+                <h2>Overview</h2>
+                <p>
+                    Mercury is the smallest planet in our solar system and the closest to the Sun. 
+                    Its surface is covered in craters, much like Earth’s Moon, giving it a rugged 
+                    and ancient appearance. Despite being so close to the Sun, Mercury doesn’t have 
+                    a thick atmosphere to trap heat, which leads to extreme temperature changes 
+                    between day and night.
+                </p>
+            </div>
+
+            <!-- (no background) -->
+            <div class="no-color">
+                <h2>Facts</h2>
+                <p>
+                    A single day on Mercury lasts longer than its year. While it takes just 88 Earth 
+                    days to orbit the Sun, it rotates very slowly on its axis. This unusual motion, 
+                    combined with its lack of atmosphere, creates one of the most extreme environments 
+                    in the solar system.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- ============================
+            VIDEO SECTION
+        ============================= -->
+        <section>
+            <div class="video" id="video">
+                <p>Learn More</p>
+                <h2>Watch a video</h2>
+                <div class="video-inner">
+
+                    <!-- Video embed -->
+                    <iframe
+                    src="https://www.youtube.com/embed/0KBjnNuhRHs?si=bO65s0i0PJd2IrLe"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ============================
+            EXPLORE PLANETS SECTION
+            Horizontal scroll gallery
+        ============================= -->
+        <section class="explore" id="explore">
+
+            <!-- Section headings -->
+            <h2>Continue exploring the Solar System!</h2>
+            <h2>Where will your next adventure take place?</h2>
+
+            <div class="gallery-wrap">
+
+                <!-- Left scroll button -->
+                <button class="scroll-btn left" onclick="scrollPlanets(-1)">&#10094;</button>
+
+                <!-- Scrollable planet gallery -->
+                <div class="planet-gallery" id="planetGallery" aria-label="Planet exploration gallery">
+        
+                    <!-- Venus card -->
+                    <!-- Link to external page -->
+                    <a href="../venus/index.html" class="planet-card"
+                    class="planet-card" aria-label="Learn about Venus, a hot toxic planet with a thick atmosphere">
+                        
+                        <!-- Planet image -->
+                        <img src="../../landing-page/venus_card.jpg" alt="Venus">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Venus</p>
+                            <p class="planet-desc">A hot, toxic world with a thick atmosphere and volcanic surface.</p>
+                        </div>
+                    </a>
+
+                    <!-- Earth Card -->
+                    <!-- Link to external page -->
+                    <a href="../earth/index.html" class="planet-card"
+                    aria-label="Earth. Our home planet with water, air, and life. Click to explore Earth.">
+
+                        <!-- Planet image -->
+                        <img src="../../landing-page/earth_card.jpg" alt="Earth">
+                        
+                         <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Earth</p>
+                            <p class="planet-desc">Our home planet with water, air, and life.</p>
+                        </div>
+                    </a>
+
+                    <!-- Mars card (non‑link version) -->
+                    <div class="planet-card"
+                    aria-label="Mars. A cold rocky desert planet known as the Red Planet with ice caps and dust storms.">
+
+                        <!-- Planet image -->
+                        <img src="../../landing-page/mars_card.jpg" alt="Mars">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Mars</p>
+                            <p class="planet-desc">A cold, rocky planet known as the Red Planet with deserts and ice caps.</p>
+                        </div>
+                    </div>
+
+                    <!-- Jupiter card (non‑link version) -->
+                    <div class="planet-card"
+                    aria-label="Jupiter. The largest planet in the solar system, a gas giant with powerful storms and many moons.">
+
+                        <!-- Planet image -->
+                        <img src="../../landing-page/jupiter_card.jpg" alt="Jupiter">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Jupiter</p>
+                            <p class="planet-desc">The largest planet, a gas giant with powerful storms and many moons.</p>
+                        </div>
+                    </div>
+
+                    <!-- Saturn card (non‑link version) -->
+                    <div class="planet-card"
+                    aria-label="Saturn. A gas giant famous for its iconic ring system.">
+
+                        <!-- Planet image -->
+                        <img src="../../landing-page/saturn_card.jpg" alt="Saturn">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Saturn</p>
+                            <p class="planet-desc">A gas giant famous for its beautiful ring system</p>
+                        </div>
+                    </div>
+
+                    <!-- Uranus card (non‑link version) -->
+                    <div class="planet-card"
+                    aria-label="Uranus. An ice giant that rotates on its side with a blue green atmosphere.">
+
+                        <!-- Planet image -->
+                        <img src="../../landing-page/uranus_card.jpg" alt="Uranus">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Uranus</p>
+                            <p class="planet-desc">An ice giant that rotates on its side with a blue-green atmosphere.</p>
+                        </div>
+                    </div>
+
+                    <!-- Neptune card (non‑link version) -->
+                    <div class="planet-card"
+                    aria-label="Neptune. A distant ice giant with strong winds and a deep blue color.">
+
+                        <!-- Planet image -->
+                        <img src="../../landing-page/neptune_card.jpg" alt="Neptune">
+                        
+                        <!-- Short summary about the planet -->
+                        <div class="planet-info">
+                            <p class="planet-name">Neptune</p>
+                            <p class="planet-desc">A distant ice giant with strong winds and a deep blue color.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Right scroll button for planet gallery -->
+                <button class="scroll-btn right" onclick="scrollPlanets(1)">&#10095;</button>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================
+        FLOATING MENU (Hamburger)
+    ============================= -->
+    <div class="floating-menu">
+
+        <!-- 3-line (hamburger) toggle button -->
+        <div class="menu-btn" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Expanded menu items -->
+        <div class="menu-items" aria-hidden="true">
+            <a href="../../landing-page/">Back Home</a>
+            <a href="#top">To the top</a>
+            <a href="#footer">To the bottom</a>
+        </div>
+    </div>
+
+    <!-- ============================
+        FOOTER SECTION
+    ============================= -->
+    <footer class="footer" id="footer">
+
+        <!-- Logo only -->
+        <div class="footer-logo">
+            <img src="../../landing-page/logo.png" alt="Logo">
+        </div>
+
+        <!-- Footer grid layout -->
+        <div class="footer-links">
+
+            <!-- Intro column -->
+            <div class="footer-col footer-intro">
+                <div class="inner">
+
+                    <h3>Did you enjoy the exploration?</h3>
+
+                    <p>
+                        Space is endless. If you haven't checked out
+                        all the offered topics, go ahead and do it now!
+                    </p>
+
+                    <!-- Suggest-a-topic form -->
+                    <!-- When the 'submit' button is clicked, an alert with the text 'submitted' is displayed -->
+                    <form onsubmit="alert('Submitted!')">
+                        <div class="field">
+
+                        <!-- The label/question/statement for the textbox -->
+                        <label for="add">
+
+                            Are there any topics you'd like to have added?
+                        </label>
+
+                        <!-- Input with placeholder -->
+                        <input 
+                            type="text" 
+                            id="add"
+                            name="topic"
+                            placeholder="Suggest a topic..." 
+                            required
+                        >
+                        </div>
+
+                        <!-- The submit button -->
+                        <div class="button">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right-side footer columns -->
+            <div class="footer-right">
+
+                <!-- Explore links -->
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="#milkyway">The Milkyway</a>
+                    <a href="#explore">Planets</a>
+                    <a href="stars.html">Stars</a>
+                    <a href="galaxies.html">Galaxies</a>
+                    <a href="blackholes.html">Black Holes</a>
+                </div>
+
+                <!-- Social links -->
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">X</a>
+                    <a href="#">Youtube</a>
+                </div>
+
+                <!-- About text -->
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <p>
+                        Big Planetarium is a Bristol-based
+                        organisation dedicated to sharing
+                        the wonders of space through
+                        engaging educational experiences
+                        for the public and schools. We
+                        aim to make science accessible,
+                        inspiring curiosity and ensuring
+                        everyone feels welcome to explore
+                        the universe.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Bottom footer bar -->
+        <div class="footer-bottom">
+            <p>© 2026 Space Explorer</p>
+        </div>
+            
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

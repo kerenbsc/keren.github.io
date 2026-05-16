@@ -1,0 +1,872 @@
+/* ===============================
+   GLOBAL RESET
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    margin: 0;
+}
+
+
+/* ===============================
+   NAVIGATION BAR
+================================= */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 3;
+    background: rgb(0, 0, 0);
+    backdrop-filter: blur(6px);
+}
+
+/* Logo */
+.logo img {
+    height: 40px;
+    margin: 4px 0;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+}
+
+/* Left + right nav groups */
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-left {
+    margin-left: 20px;
+}
+
+.nav-right {
+    margin-left: auto;
+}
+
+/* Nav links */
+.navbar a {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: white;
+    text-decoration: none;
+
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    transform: translateY(-5px);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+
+/* ===============================
+   HEADER SECTION
+================================= */
+header {
+    margin: 50px auto 150px;
+    height: 400px;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+}
+
+/* Planet image (behind title) */
+.header-image {
+    position: absolute;
+    left: 48%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.header-image img {
+    width: 400px;
+    height: auto;
+
+    transform-origin: center;
+    transform-style: preserve-3d;
+
+    animation: spin3d 40s linear infinite,
+               lighting 6s ease-in-out infinite;
+}
+
+/* 3D rotation */
+@keyframes spin3d {
+    from {
+        transform: rotateX(18deg) rotateY(0deg) rotateZ(10deg);
+    }
+    to {
+        transform: rotateX(18deg) rotateY(360deg) rotateZ(10deg);
+    }
+}
+
+/* Light pulse */
+@keyframes lighting {
+    0%   { filter: brightness(0.9) contrast(1); }
+    50%  { filter: brightness(1.3) contrast(1.2); }
+    100% { filter: brightness(0.9) contrast(1); }
+}
+
+/* Title overlapping planet */
+header h1 {
+    position: relative;
+    top: -20%;
+    z-index: 2;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 130px;
+    letter-spacing: 10px;
+
+    color: black;
+    text-shadow: 0 0 25px rgb(20, 19, 19);
+}
+
+
+/* ===============================
+   STATISTICS CARD
+================================= */
+.intro-stats {
+    margin: auto;
+    max-width: 810px;
+
+    padding: 30px;
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+
+    backdrop-filter: blur(6px);
+}
+
+/* Stats title */
+.intro-stats h1 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Remove default bullets */
+.intro-stats ul {
+    list-style: none;
+}
+
+/* Design for list items */
+.intro-stats li {
+    margin-bottom: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ===============================
+   INFO SECTION
+================================= */
+.info {
+    width: 100%;
+    margin: 40px 0;
+    padding: 0 25px;
+
+    color: black;
+    text-align: center;
+}
+
+/* Paragraphs inside info section */
+.info p {
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* Right column (no background) */
+.no-color {
+    margin: 0 45px;
+}
+
+/* Section headings */
+.info h2 {
+    margin-bottom: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Left column (black background) */
+.color {
+    background-color: black;
+    color: white;
+
+    padding: 50px 50px 30px;
+    margin-bottom: 40px;
+}
+
+.color p {
+    margin-bottom: 10px;
+}
+
+
+/* ===============================
+   VIDEO SECTION
+================================= */
+.video {
+    margin: 40px 25px 0;
+    padding: 30px 20px;
+
+    background-color: black;
+    color: white;
+}
+
+/* Small label text */
+.video p {
+    font-size: 14px;
+    color: grey;
+    margin: 5px;
+}
+
+/* Video heading */
+.video h2 {
+    font-size: 26px;
+}
+
+/* Shared font + left spacing */
+.video h2,
+.video p {
+    font-family: Orbitron;
+    margin-left: 30px;
+}
+
+/* Wrapper to center and limit width */
+.video-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Embedded YouTube iframe */
+.video iframe {
+    margin-top: 30px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    display: block;
+    border-radius: 12px;
+}
+
+/* ===============================
+   EXPLORE SECTION
+================================= */
+.explore {
+    margin: 50px 40px;
+    padding: 70px 40px 30px;
+
+    text-align: center;
+    color: #f2f2f2;
+
+    background: url("../../landing-page/star-bg.jpg") center/cover fixed;
+}
+
+.explore h2 {
+    font-family: Orbitron;
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+/* Extra spacing before gallery */
+.explore h2:last-of-type {
+    margin-bottom: 60px;
+}
+
+
+/* ===============================
+   GALLERY WRAPPER
+   Holds scroll buttons + gallery
+================================= */
+.gallery-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+
+/* ===============================
+   PLANET GALLERY (HORIZONTAL SCROLL)
+================================= */
+.planet-gallery {
+    display: flex;
+    gap: 25px;
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    padding: 20px 40px 60px;
+}
+
+/* Hide scrollbar (WebKit browsers) */
+.planet-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* ===============================
+   PLANET CARDS
+================================= */
+.planet-card {
+    flex: 0 0 30%;
+    height: 280px;
+
+    position: relative;
+    overflow: hidden;
+
+    scroll-snap-align: center;
+    cursor: pointer;
+    text-decoration: none;
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Card image */
+.planet-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+/* Hover effect: lift + tilt */
+.planet-card:hover {
+    transform: translateY(-8px) scale(1.05) rotateY(8deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.planet-card:hover img {
+    transform: scale(1.08);
+}
+
+/* Disable hover effects for non-link cards */
+.planet-card:not(a):hover {
+    transform: none;
+    box-shadow: none;
+    cursor: default;
+}
+
+.planet-card:not(a):hover img {
+    transform: none;
+}
+
+
+/* ===============================
+   CARD OVERLAY INFO
+================================= */
+.planet-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 35%;
+    padding: 12px 14px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+
+    pointer-events: none;
+}
+
+/* Reveal overlay on hover */
+.planet-card:hover .planet-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Overlay title */
+.planet-name {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+/* Overlay description */
+.planet-desc {
+    font-family: "Space Grotesk", sans-serif;
+    margin-top: 5px;
+
+    font-size: 14px;
+    line-height: 1.2;
+    opacity: 0.9;
+
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+}
+
+
+/* ===============================
+   SCROLL BUTTONS
+================================= */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 45px;
+    height: 70px;
+
+    border: none;
+    cursor: pointer;
+
+    font-size: 28px;
+    color: white;
+
+    background: rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
+
+    z-index: 10;
+}
+
+/* Button hover effects */
+.scroll-btn:hover {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+/* Button positions */
+.scroll-btn.left {
+    left: 0;
+}
+
+.scroll-btn.right {
+    right: 0;
+}
+
+/* ===============================
+   FOOTER — MAIN CONTAINER
+================================= */
+.footer {
+  background: #05070d;
+  color: #ccc;
+
+  padding: 40px 40px 30px;
+  margin-top: 80px;
+}
+
+/* Logo section */
+.footer-logo {
+  margin-bottom: 30px;
+}
+
+.footer-logo img {
+  height: 40px;
+  width: auto;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+}
+
+
+/* ===============================
+   FOOTER GRID LAYOUT
+================================= */
+.footer-links {
+  display: grid;
+  grid-template-columns: 2.2fr 3fr;
+  gap: 20px;
+}
+
+/* Right side: 3-column layout */
+.footer-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  padding-left: 50px;
+}
+
+/* Left intro column */
+.footer-intro {
+  padding-right: 40px;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Inner wrapper for spacing */
+.inner {
+  padding-right: 40px; /* spacing without shifting divider */
+}
+
+
+/* ===============================
+   FOOTER COLUMN STYLES
+================================= */
+.footer-col {
+  padding: 0;
+}
+
+/* Column headings */
+.footer-col h4 {
+  color: white;
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Intro column heading */
+.footer-col h3 {
+  color: white;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* Intro column text + labels */
+.footer-col.footer-intro p,
+.footer-col.footer-intro label {
+  margin-bottom: 10px;
+}
+
+/* General paragraph styling */
+.footer-col p {
+  font-size: 13px;
+  line-height: 17px;
+}
+
+/* Footer links */
+.footer-col a {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #aaa;
+  font-size: 14px;
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+
+/* Hover effects */
+.footer-col a:hover {
+  color: white;
+}
+
+
+/* ===============================
+   FORM FIELDS
+================================= */
+.field {
+  margin-bottom: 15px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px;
+
+  border: none;
+  outline: none;
+  border-radius: 6px;
+
+  background: #0b1220;
+  color: white;
+}
+
+/* Submit button */
+.button input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 40px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: white;
+  color: black;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* Button hover effects */
+.button input:hover {
+  background: #ddd;
+}
+
+
+/* ===============================
+   FOOTER BOTTOM BAR
+================================= */
+.footer-bottom {
+  padding-top: 20px;
+
+  font-size: 13px;
+  opacity: 0.6;
+  text-align: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================
+   FLOATING MENU — FIXED POSITION CONTAINER
+   Holds the hamburger button + hidden links
+============================================ */
+.floating-menu {
+    position: fixed;
+    top: 80px;
+    right: 15px;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* ============================================
+   HAMBURGER BUTTON
+   Dark rounded box containing 3 animated lines
+============================================ */
+.menu-btn {
+    width: 45px;
+    height: 40px;
+    padding: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid white;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* ============================================
+   HAMBURGER LINES
+   Each line floats gently using keyframe motion
+============================================ */
+.menu-btn span {
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    animation: floatLine 3s ease-in-out infinite;
+}
+
+/* Staggered animation for a smoother, layered effect */
+.menu-btn span:nth-child(2) { animation-delay: 0.2s; }
+.menu-btn span:nth-child(3) { animation-delay: 0.4s; }
+
+/* ============================================
+   MENU ITEMS (INITIALLY HIDDEN)
+   Revealed on hover via opacity + vertical shift
+============================================ */
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+
+    transition: 0.3s ease;
+}
+
+/* ============================================
+   MENU LINKS
+   Small floating buttons with hover elevation
+============================================ */
+.menu-items a {
+    padding: 10px 14px;
+
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    text-decoration: none;
+
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+    transition: all 0.25s ease;
+}
+
+/* Hover: invert colors + lift upward */
+.menu-items a:hover {
+    background: white;
+    color: black;
+
+    transform: translateY(-4px);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.6),
+        0 0 12px rgba(120, 160, 255, 0.3);
+}
+
+/* ============================================
+   MENU EXPANSION ON HOVER
+   Reveals the hidden links smoothly
+============================================ */
+.floating-menu:hover .menu-items {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ============================================
+   BUTTON HOVER STATE
+   Inverts colors for visual feedback
+============================================ */
+.menu-btn:hover {
+    background: white;
+}
+
+.menu-btn:hover span {
+    background: black;
+}
+
+/* ============================================
+   FLOAT ANIMATION (LINES ONLY)
+   Subtle vertical drift for a "breathing" effect
+============================================ */
+@keyframes floatLine {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* ===============================
+   MEDIA QUERY FOR PHONE SIZE
+   (Adjusts layout for screens 600px wide or smaller)
+================================= */
+@media (max-width: 600px) {
+
+  header h1 {
+    font-size: 64px;        /* Shrinks the huge title so it fits on phones */
+    letter-spacing: 4px;    /* Reduces spacing so letters don’t stretch too far */
+    text-align: center;     /* Centers the title for better balance */
+    top: -8%;               /* Pulls it upward so it doesn’t push content down */
+  }
+
+  header {
+    height: 300px;          /* Keeps header from becoming too tall on mobile */
+  }
+
+  .header-image img {
+    width: 250px;           /* Scales the planet image down for small screens */
+  }
+
+  .intro-stats {
+    max-width: 92%;         /* Prevents the box from touching screen edges */
+    padding: 18px;          /* Reduces padding so it feels less bulky */
+    border-radius: 10px;    /* Slightly softer corners */
+  }
+
+  .intro-stats h1 {
+    font-size: 22px;        /* Smaller heading for mobile readability */
+    text-align: center;     /* Centers text for a cleaner layout */
+  }
+
+  .intro-stats li {
+    font-size: 12.4px;      /* Comfortable reading size on small screens */
+    line-height: 1.4;       /* Adds breathing room between lines */
+    margin-bottom: 8px;     /* Space between list items */
+  }
+
+  .planet-gallery {
+    padding: 20px 10px 60px; /* Reduces side padding for narrow screens */
+    gap: 0;                  /* Prevents the next card from peeking in */
+  }
+
+  .planet-card {
+    flex: 0 0 100%;          /* Shows one full card at a time */
+    height: 300px;           /* Consistent card height */
+  }
+
+  /* FOOTER LAYOUT FOR MOBILE */
+  .footer-links {
+    grid-template-columns: 1fr; /* Stacks all footer sections vertically */
+    gap: 30px;
+  }
+
+  .footer-intro {
+    border-right: none;      /* Removes desktop divider line */
+    padding-right: 0;
+  }
+
+  .footer-right {
+    grid-template-columns: 1fr; /* Turns 3 columns into 1 for mobile */
+    padding-left: 0;
+    gap: 20px;
+  }
+
+  .footer-col {
+    text-align: center;      /* Centers text for easier reading */
+  }
+
+  .inner {
+    padding-right: 0;        /* Removes extra spacing on the right */
+  }
+
+  /* FORM INPUT ADJUSTMENTS */
+  .field input {
+    width: 90%;              /* Keeps input boxes centered */
+    margin: 0 auto;
+  }
+
+  .button input {
+    width: 90%;
+    margin: 10px auto 30px;  /* Adds spacing below the button */
+  }
+
+  /* LOGO CENTERING */
+  .footer-logo {
+    display: flex;
+    justify-content: center; /* Centers the logo on mobile */
+  }
+
+  .footer-col:last-child {
+    margin-bottom: 20px;     /* Adds breathing room at the bottom */
+  }
+}
+
+.info,
+.explore {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}

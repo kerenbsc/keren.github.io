@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Specifies character encoding to help browsers display special characters -->
+    <meta charset="UTF-8">
+
+    <!-- Ensures the page scales properly on phones and tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Links to your external CSS file for all styling -->
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <!-- Google Fonts used throughout the page -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <title>Big Planetarium | Sign Up</title>
+</head>
+
+<body>
+    <!-- Main wrapper that centers everything on the page -->
+    <div class="container">
+
+        <!-- First card: holds the actual sign‑up form -->
+        <div class="card">
+            <div class="main-card">
+
+                <!-- Sign‑up form (no action yet, just structure) -->
+                <form class="form">
+
+                    <!-- Page heading for the form -->
+                    <h2>Sign Up to Big Planetarium</h2>
+
+                    <!-- Full Name input field -->
+                    <div class="field">
+                        <label for="name">Full Name</label>
+                        <!-- Text box where the user types their name -->
+                        <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required
+                        aria-label="Full Name">
+                    </div>
+
+                    <!-- Email input field -->
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <!-- Text box for the user's email address -->
+                        <input
+                        type="text"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                        aria-label="Email">
+                    </div>
+
+                    <!-- Password input field -->
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <!-- Password box that hides the characters as the user types -->
+                        <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                        aria-label="Password">
+                    </div>
+
+                    <!-- Checkbox for optional newsletters -->
+                    <div class="field">
+                        <!-- Checkbox the user can tick -->
+                        <input
+                        type="checkbox"
+                        id="recieve"
+                        name="recieve
+                        aria-label="Receive updates and newsletters">
+                        <!-- Label describing what the checkbox is for -->
+                        <label for="recieve">Recieve updates and newsletters?</label>
+                    </div>
+
+                    <!-- Submit button that sends the form -->
+                    <div class="button">
+                        <input
+                        type="submit"
+                        value="Sign Up"
+                        aria-label="Sign up button">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Second card: link for users who already have an account -->
+        <div class="card">
+            <div class="login">
+                Already have an account?
+                <!-- Link to the login page -->
+                <a href="../login/index.html" aria-label="Go to login page">Login</a>
+            </div>
+        </div>
+
+        <!-- Link that takes the user back to the homepage -->
+        <a href="../../landing-page/index.html" class="home" aria-label="Return to homepage">
+            Return to Homepage
+        </a>
+
+    </div>
+</body>
+</html>
